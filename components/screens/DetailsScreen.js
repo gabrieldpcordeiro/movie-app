@@ -10,7 +10,7 @@ const DetailsScreen = ({route}) => {
 
     useEffect(() => {
         async function fetchMovie() {
-            let typeSearch = ''
+            let typeSearch = currentTab
             try {
                 setIsLoading(true)
                 if (mediaType === undefined || currentTab === 'tv') {
