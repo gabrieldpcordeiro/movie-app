@@ -7,15 +7,17 @@ const ItemForm = ({selectChoice, setSelectChoice, currentTab}) => {
     const TabChoice = currentTab;
 
     const movieChoice = [
-        {label: "Now Playing", value: "now_playing"},
-        {label: "Popular", value: "popular"},
         {label: "Top Rated", value: "top_rated"},
+        {label: "Popular", value: "popular"},
+        {label: "Now Playing", value: "now_playing"},
         {label: "Upcoming", value: "upcoming"},
     ]
     const tvChoice = [
+        {label: "Popular", value: "popular"},
+        {label: "Top Rated", value: "top_rated"},
         {label: "Airing Today", value: "airing_today"},
         {label: "On The Air", value: "on_the_air"},
-        {label: "Popular", value: "popular"}
+
     ]
 
     return (
