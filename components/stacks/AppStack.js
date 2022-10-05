@@ -5,8 +5,8 @@ import TabNavigator from './TabNavigator'
 import DetailsScreen from '../screens/DetailsScreen'
 
 const Stack = createNativeStackNavigator()
-
 const AppStack = () => {
+
     return (
         <NavigationContainer>
             <Stack.Navigator>
@@ -14,14 +14,15 @@ const AppStack = () => {
                     name="Index"
                     component={TabNavigator}
                     options={{
-                        title: "Movie App",
+                        headerShown: false,
                     }}
                 />
                 <Stack.Screen
                     name="Details"
                     component={DetailsScreen}
                     options={
-                    {
+                        ({route}) => ({
+                            title: route.params.title,
                             headerBackTitle: 'Back to List',
                             headerTitleStyle: {
                                 fontSize: 18,
@@ -29,8 +30,11 @@ const AppStack = () => {
                                 color: '#000000'
                             },
                             headerTintColor: 'dodgerblue',
-                        }
+                        })
+
+
                     }
+
                 />
             </Stack.Navigator>
         </NavigationContainer>

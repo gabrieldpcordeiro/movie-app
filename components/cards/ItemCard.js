@@ -16,7 +16,7 @@ const itemCard = ({navigation, item, currentTab,}) => {
                     <Text fontSize='sm'>Popularity: {item.popularity ? item.popularity : 'N/A'}</Text>
                     <Text fontSize='sm'>Release Date: {item.release_date ? item.release_date : 'N/A'}</Text>
                     <Button style={{backgroundColor: '#06b6d4', width: 200, height: 40}}
-                            onPress={() => navigation.navigate('Details', {itemId: item.id, currentTab: currentTab, mediaType: item.media_type})}>More Details</Button>
+                            onPress={() => navigation.navigate('Details', {itemId: item.id, currentTab: currentTab, mediaType: item.media_type, title: item.original_title })}>More Details</Button>
                 </VStack>
             </HStack>
         </Box>
