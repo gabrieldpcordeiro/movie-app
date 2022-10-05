@@ -4,16 +4,24 @@ import LoadSpinner from '../layout/Loading'
 import {getItems} from "../../services/api";
 
 const DetailsScreen = ({route}) => {
-    const {itemId, currentTab} = route.params;
+    const {itemId, currentTab, mediaType} = route.params;
     const [item, setItem] = useState({})
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         async function fetchMovie() {
+            let typeSearch = ''
             try {
                 setIsLoading(true)
+                if (mediaType === undefined || currentTab === 'tv') {
+                    typeSearch = 'tv'
+                }
+                if (mediaType === 'movie' || currentTab === 'movie') {
+                    typeSearch = 'movie'
+                }
+                console.log(typeSearch)
+                const data = await getItems(typeSearch, itemId);
 
-                const data = await getItems(currentTab, itemId);
                 setItem(data)
                 setIsLoading(false)
 
@@ -23,6 +31,7 @@ const DetailsScreen = ({route}) => {
 
             }
         }
+
         fetchMovie();
 
     }, [])

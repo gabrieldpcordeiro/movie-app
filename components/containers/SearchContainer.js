@@ -10,7 +10,6 @@ const SearchContainer = ({navigation}) => {
     const [movie, setMovie] = useState({})
     const [search, setSearch] = useState([])
     const [selectType, setSelectType] = useState("multi")
-    const [media, setMediaType] = useState([])
 
     const fetchSearch = async () => {
         try {
@@ -18,9 +17,9 @@ const SearchContainer = ({navigation}) => {
 
             const data = await getSearch(movie, selectType)
 
+
             setSearch([...data.results])
             setIsLoading(false)
-   console.log(data)
         } catch (error) {
             throw error
 
@@ -38,7 +37,7 @@ const SearchContainer = ({navigation}) => {
                 <SearchForm selectType={selectType} setSelectType={setSelectType} fetchSearch={fetchSearch}
                             onInputChange={handleInputChange}/>
             </Center>
-            {isLoading ? <Loading/> : <ItemsList navigation={navigation} item={search} type={'multi'}/>}
+            {isLoading ? <Loading/> : <ItemsList navigation={navigation} item={search}  type={'multi'}/>}
         </>
     )
 }
