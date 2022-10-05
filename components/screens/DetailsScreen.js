@@ -13,12 +13,14 @@ const DetailsScreen = ({route}) => {
             let typeSearch = currentTab
             try {
                 setIsLoading(true)
-                if (mediaType === undefined || currentTab === 'tv') {
+                if (mediaType === undefined || currentTab === 'tv' || currentTab ===  undefined) {
                     typeSearch = 'tv'
                 }
+
                 if (mediaType === 'movie' || currentTab === 'movie') {
                     typeSearch = 'movie'
                 }
+                console.log(typeSearch)
 
                 const data = await getItems(typeSearch, itemId);
 
