@@ -20,7 +20,6 @@ const DetailsScreen = ({route}) => {
                 if (mediaType === 'movie' || currentTab === 'movie') {
                     typeSearch = 'movie'
                 }
-                console.log(typeSearch)
 
                 const data = await getItems(typeSearch, itemId);
 
