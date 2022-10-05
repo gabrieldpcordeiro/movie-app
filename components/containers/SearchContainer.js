@@ -37,7 +37,7 @@ const SearchContainer = ({navigation}) => {
                 <SearchForm selectType={selectType} setSelectType={setSelectType} fetchSearch={fetchSearch}
                             onInputChange={handleInputChange}/>
             </Center>
-            {isLoading ? <Loading/> : <ItemsList navigation={navigation} item={search}  type={'multi'}/>}
+            {isLoading ? <Loading/> : <ItemsList navigation={navigation} item={search} media={selectType}/>}
         </>
     )
 }

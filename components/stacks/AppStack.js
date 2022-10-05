@@ -14,7 +14,14 @@ const AppStack = () => {
                     name="Index"
                     component={TabNavigator}
                     options={{
-                        headerShown: false,
+                        title: 'Movie App',
+                        headerStyle:{
+                            backgroundColor: '#2c3e50'
+                        },
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: {
+                            color: '#fff'
+                        },
                     }}
                 />
                 <Stack.Screen
@@ -31,10 +38,7 @@ const AppStack = () => {
                             },
                             headerTintColor: 'dodgerblue',
                         })
-
-
                     }
-
                 />
             </Stack.Navigator>
         </NavigationContainer>

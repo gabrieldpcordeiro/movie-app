@@ -4,7 +4,7 @@ import LoadSpinner from '../layout/Loading'
 import {getItems} from "../../services/api";
 
 const DetailsScreen = ({route}) => {
-    const {itemId, currentTab, mediaType} = route.params;
+    const {itemId, currentTab, mediaType, media} = route.params;
     const [item, setItem] = useState({})
     const [isLoading, setIsLoading] = useState(false)
 
@@ -13,11 +13,11 @@ const DetailsScreen = ({route}) => {
             let typeSearch = currentTab
             try {
                 setIsLoading(true)
-                if (mediaType === undefined || currentTab === 'tv' || currentTab ===  undefined) {
+                if (mediaType === undefined || currentTab === 'tv' || currentTab ===  undefined || media === 'tv' ) {
                     typeSearch = 'tv'
                 }
 
-                if (mediaType === 'movie' || currentTab === 'movie') {
+                if (mediaType === 'movie' || currentTab === 'movie' || media ==='movie') {
                     typeSearch = 'movie'
                 }
 

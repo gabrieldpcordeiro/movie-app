@@ -37,7 +37,7 @@ const ItemContainer = ({navigation, currentTab}) => {
         <>
             <ItemForm selectChoice={selectType} setSelectChoice={setSelectType} currentTab={currentTab}/>
             {isLoading ? <LoadSpinner/> :
-                <ItemsList navigation={navigation} item={items} currentTab={currentItem}/>}
+                <ItemsList navigation={navigation} item={items} currentTab={currentItem} />}
         </>
     )
 }
